@@ -9,7 +9,7 @@
       <div class="col-5 my-4">
         <div class="card-trip position-relative">
           <%= link_to "", restaurant_path(restaurant), class: 'img-link' %>
-          <%= image_tag "http://source.unsplash.com/featured/?#{restaurant.category} food>&#{rand(1000)}" %>
+          <%= image_tag "http://source.unsplash.com/featured/?#{restaurant.category} restaurant>&#{rand(1000)}" %>
           <div class="card-trip-infos">
             <div>
               <h2><%= restaurant.name %></h2>
