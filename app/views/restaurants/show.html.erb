@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row justify_content-center">
+    <div class="col-11">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%="http://source.unsplash.com/featured/?#{@restaurant.category} food>&#{rand(1000)}"%>')">
+        <%= @restaurant.name %>
+      </div>
+      <div class='bg-light p-3 position-relative'>
+        <p class='fs-4'><%= @restaurant.category.capitalize %> food</p>
+        <p>Address: <%= @restaurant.address %></p>
+        <p>Phone number: <%= @restaurant.phone_number %></p>
+        <span class="position-absolute end-0 bottom-50 p-3 fs-3"><%= '⭐' *  @restaurant.total_rating %></span>
+        <%= link_to "back", restaurants_path, class: 'btn btn-outline-secondary'  %>
+      </div>
+      <div>
+        <h3 class="my-4">Reviews</h3>
+        <%= link_to "add a review", new_restaurant_review_path(@restaurant), class: 'btn btn-outline-success mb-2'  %>
+        <% @restaurant.reviews.each do |review| %>
+        <div class='mb-1 border rounded p-3'>
+          <p><%= review.content %></p>
+          <span><%= '⭐' *  review.rating %></span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

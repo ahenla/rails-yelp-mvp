@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="col-10 my-3 text-center">Add a new Restaurant</h1>
+    <div class="col-10">
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name, placeholder: "Enter the name..." %>
+        <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], selected: "chinese" %>
+        <%= f.input :address, placeholder: "Enter the address..."  %>
+        <%= f.input :phone_number, placeholder: "(123) 123-1234 x123" %>
+        <%= f.submit class: 'btn btn-info' %>
+      <% end %>
+    </div>
+  </div>
+</div>

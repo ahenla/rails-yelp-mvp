@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="col-10 my-3 text-center">Add a new Review</h1>
+    <div class="col-10">
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :content, placeholder: "Write your review..." %>
+        <%= f.input :rating, collection: (0..5), selected: 0 %>
+        <%= f.submit class: 'btn btn-outline-success' %>
+      <% end %>
+    </div>
+  </div>
+</div>

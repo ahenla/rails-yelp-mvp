@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="bg-dark p-2 m-0 rounded d-flex justify-content-center">
+    <i class="fa-solid fa-fire fs-2 mt-4 px-2 pt-1" style="color: #ff4d00;"></i>
+    <h1 class="text-center my-3 text-light"> Hottest Restaurants</h1>
+  </div>
+  <div class="row justify-content-center">
+  <%= link_to "Add a new Restaurant", new_restaurant_path, class: 'col-10 btn btn-outline-primary my-2' %>
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-5 my-4">
+        <div class="card-trip position-relative">
+          <%= link_to "", restaurant_path(restaurant), class: 'img-link' %>
+          <%= image_tag "http://source.unsplash.com/featured/?#{restaurant.category} food>&#{rand(1000)}" %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= restaurant.name %></h2>
+              <p class="fs-6"><%= restaurant.category.capitalize %> food</p>
+              <p class="text-secondary"><%= restaurant.address %></p>
+              <p class="text-secondary"><%= restaurant.phone_number %></p>
+            </div>
+            <h2 class="card-trip-pricing"><span class="p-3"><%= '⭐' *  restaurant.total_rating %></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
